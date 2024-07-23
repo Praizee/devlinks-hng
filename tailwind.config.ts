@@ -8,6 +8,8 @@ const config: Config = {
   ],
   theme: {
     colors: {
+      white: "#FFFFFF",
+      black: "#000000",
       danger: "#FF3939",
       primary: {
         DEFAULT: "#633CFF",
@@ -26,6 +28,16 @@ const config: Config = {
         disabled: "#633CFF",
         300: "#FAFAFA",
       },
+    },
+
+    borderRadius: {
+      DEFAULT: "8px",
+      none: "0",
+      // sm: "0.125rem",
+      // md: "0.375rem",
+      // lg: "0.5rem",
+      // full: "9999px",
+      // large: "12px",
     },
   },
   plugins: [],
