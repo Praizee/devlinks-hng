@@ -40,6 +40,9 @@ const config: Config = {
       none: "0",
       md: "12px",
     },
+    boxShadow: {
+      input: "0px 0px 32px 0px rgba(99, 60, 255, 0.25)",
+    },
   },
   plugins: [],
 };
