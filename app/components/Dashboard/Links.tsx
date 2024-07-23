@@ -81,7 +81,7 @@ const Links = () => {
             <button
               type="button"
               disabled
-              className="text-white font-semibold text-base bg-primary px-[27px] py-[11px] rounded disabled:opacity-[0.25] disabled:cursor-not-allowed active:scale-95 duration-200 w-full md:w-max"
+              className="text-white font-semibold text-base bg-primary px-[27px] py-[11px] rounded disabled:bg-opacity-25 disabled:cursor-not-allowed active:scale-95 duration-200 w-full md:w-max"
             >
               Save
             </button>
