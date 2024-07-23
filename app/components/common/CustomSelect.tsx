@@ -72,7 +72,7 @@ const CustomSelect = () => {
         <Select.Content
           position="popper"
           avoidCollisions={true}
-          className="w-[var(--radix-select-trigger-width)] max-h-72 mt-3 overflow-y-auto bg-white border border-gray-300 rounded-lg shadow-md"
+          className="w-[var(--radix-select-trigger-width)] max-h-80 mt-3 overflow-y-auto bg-white border border-gray-200 rounded"
         >
           <Select.ScrollUpButton className="flex items-center justify-center h-8 cursor-pointer bg-white">
             <BiChevronUp className="size-6 text-primary" />
@@ -104,7 +104,7 @@ const CustomSelect = () => {
 type SelectItemProps = {
   children: React.ReactNode;
   value: string;
-  icon: React.ComponentType<{ className?: string }>; // Ensure correct typing
+  icon: React.ComponentType<{ className?: string }>;
 };
 
 const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
@@ -112,13 +112,13 @@ const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
     <Select.Item
       ref={forwardedRef}
       value={value}
-      className="flex items-center p-2 cursor-pointer hover:bg-gray-200"
+      className="flex items-center p-2 cursor-pointer hover:bg-primary-200 hover:text-primary"
       {...props}
     >
-      <Icon className="mr-2 text-gray" />
+      <Icon className="mr-4" />
       <Select.ItemText className="text-gray">{children}</Select.ItemText>
       <Select.ItemIndicator className="ml-auto">
-        <BiCheck className="text-blue-500" />
+        <BiCheck className="text-primary size-6" />
       </Select.ItemIndicator>
     </Select.Item>
   )
