@@ -21,6 +21,7 @@ const config: Config = {
         100: "#737373",
         200: "#D9D9D9",
         300: "#FAFAFA",
+        400: "#EEEEEE",
       },
       "button-primary": {
         DEFAULT: "#633CFF",
