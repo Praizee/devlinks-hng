@@ -82,7 +82,7 @@ const Profile = () => {
 
               {/* personal details */}
               <div className="bg-gray-300 rounded-[12px] p-[20px] flex flex-col gap-[20px]">
-                <span className="flex gap-[16px] items-center">
+                <span className="flex flex-col sm:flex-row gap-[4px] sm:gap-[16px] sm:items-center">
                   <label
                     htmlFor="first_name"
                     className="text-base text-gray-100 min-w-[240px]"
@@ -100,7 +100,7 @@ const Profile = () => {
                   />
                 </span>
 
-                <span className="flex gap-[16px] items-center">
+                <span className="flex flex-col sm:flex-row gap-[4px] sm:gap-[16px] sm:items-center">
                   <label
                     htmlFor="last_name"
                     className="text-base text-gray-100 min-w-[240px]"
@@ -118,7 +118,7 @@ const Profile = () => {
                   />
                 </span>
 
-                <span className="flex gap-[16px] items-center">
+                <span className="flex flex-col sm:flex-row gap-[4px] sm:gap-[16px] sm:items-center">
                   <label
                     htmlFor="email"
                     className="text-base text-gray-100 min-w-[240px]"
