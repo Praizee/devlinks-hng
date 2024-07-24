@@ -55,7 +55,7 @@ const CustomSelect = () => {
         className="inline-flex items-center justify-between px-[16px] py-[12px] text-base text-gray placeholder:text-gray placeholder:opacity-[0.5] bg-white outline-none border active:border-primary active:shadow-input focus:border-primary focus:shadow-input rounded"
       >
         <div className="flex gap-2 items-center">
-          {SelectedIcon && <SelectedIcon className="mr-2 text-gray" />}
+          {SelectedIcon && <SelectedIcon className="mr-2 text-gray-100" />}
           <Select.Value
             placeholder="Select a platform..."
             className="text-gray flex items-center"
@@ -115,7 +115,7 @@ const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
       className="flex items-center p-2 cursor-pointer hover:bg-primary-200 hover:text-primary"
       {...props}
     >
-      <Icon className="mr-4" />
+      <Icon className="mr-4 text-gray-100" />
       <Select.ItemText className="text-gray">{children}</Select.ItemText>
       <Select.ItemIndicator className="ml-auto">
         <BiCheck className="text-primary size-6" />
