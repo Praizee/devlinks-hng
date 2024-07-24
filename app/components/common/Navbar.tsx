@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import Logo from "@/public/assets/images/Logo.png";
+import Logo from "@/public/assets/svg/Logo.svg";
 import MobileLogo from "@/public/assets/svg/mobile-logo.svg";
 import LinkIcon from "@/public/assets/svg/LinkIcon";
 import ProfileIcon from "@/public/assets/svg/ProfileIcon";
