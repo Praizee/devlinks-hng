@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { AuthLayout } from "@/app/_layouts";
 
 import Logo from "@/public/assets/images/Logo.png";
@@ -10,6 +11,8 @@ import EmailIcon from "@/public/assets/svg/EmailIcon";
 import PasswordIcon from "@/public/assets/svg/PasswordIcon";
 
 const Login = () => {
+  const router = useRouter();
+
   return (
     <AuthLayout>
       <div className="flex flex-col gap-[64px] sm:gap-[51px] w-full sm:w-[476px] p-[32px] sm:p-0">
@@ -72,6 +75,7 @@ const Login = () => {
             </div>
 
             <button
+              onClick={() => router.push("/links")}
               type="submit"
               className="bg-primary hover:bg-primary-100 py-[11px] px-[27px] text-base text-white font-semibold active:scale-90 duration-200 rounded"
             >

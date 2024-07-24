@@ -18,7 +18,7 @@ const Navbar = () => {
       <nav className="w-full border-b md:border-0 sticky top-0 bg-white rounded-md z-[999] p-[16px] pl-[24px]">
         <div className="items-center max-w-screen-2xl mx-auto flex">
           <div className="">
-            <Link href="/">
+            <Link href="/links">
               <Image
                 src={Logo}
                 width={146}
