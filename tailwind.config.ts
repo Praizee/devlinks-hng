@@ -39,6 +39,7 @@ const config: Config = {
       DEFAULT: "8px",
       none: "0",
       md: "12px",
+      full: "100%",
     },
     boxShadow: {
       input: "0px 0px 32px 0px rgba(99, 60, 255, 0.25)",
