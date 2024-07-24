@@ -33,6 +33,8 @@ const config: Config = {
     scale: {
       "90": "0.990",
       "95": "0.95",
+      "100": "1",
+      "105": "1.05",
     },
 
     borderRadius: {
