@@ -139,14 +139,17 @@ const PlatformLinks = () => {
         <Link
           key={option.label}
           href={option.link}
-          className={`w-[237px] h-[56px] p-[16px] rounded text-white flex items-center gap-[8px] justify-between ${option.border} active:scale-100 hover:scale-105 duration-200`}
+          className={`w-[237px] h-[56px] p-[16px] rounded text-white flex items-center gap-[8px] justify-between ${option.border} group`}
+          //   active:scale-100 hover:scale-105 duration-200
           style={{
             backgroundColor: option.color,
           }}
         >
           <option.Icon className="size-6" />
           <div className={`${option.text} flex-1`}>{option.label}</div>
-          <LuArrowRight className={`size-[16px] ${option.text}`} />
+          <LuArrowRight
+            className={`size-[16px] ${option.text} group-hover:translate-x-1 duration-200`}
+          />
         </Link>
       ))}
     </>
