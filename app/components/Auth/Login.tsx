@@ -93,13 +93,13 @@ const Login = () => {
                         ? "e.g. alex@email.com"
                         : "Enter your password"
                     }
-                    className={`w-full pl-10 px-[16px] py-[12px] text-base text-gray placeholder:text-gray placeholder:opacity-[0.5] bg-transparent outline-none border rounded ${
+                    className={`w-full pl-10 px-[16px] py-[12px] text-base text-gray placeholder:text-gray placeholder:opacity-[0.5] bg-white outline-none border rounded autofill:bg-white ${
                       errors[field as keyof FormData]
                         ? "border-danger"
-                        : "border-gray"
+                        : "border-gray-200"
                     } focus:border-primary focus:shadow-input ${
                       errors[field as keyof FormData]
-                        ? "ring-2 ring-danger"
+                        ? "focus:ring-2 ring-danger ring-1"
                         : ""
                     }`}
                   />
