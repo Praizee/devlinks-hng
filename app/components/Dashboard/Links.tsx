@@ -107,7 +107,7 @@ const Links = () => {
     <BaseLayout>
       <section className="flex flex-col lg:flex-row gap-[24px]">
         <div className="hidden lg:flex justify-center items-center bg-white w-full max-w-[400px] xl:max-w-[560px] lg:min-h-[834px] h-max p-[24px] rounded-[12px]">
-          <PhonePreview />
+          <PhonePreview userData={undefined} />
         </div>
 
         <div className="flex flex-col divide-y-2 w-full">
