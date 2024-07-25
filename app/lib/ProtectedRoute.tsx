@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   }, [user, loading, router]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p>Loading...</p>; // change this to a spinner later
   }
 
   return user ? <>{children}</> : null;
