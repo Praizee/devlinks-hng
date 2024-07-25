@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { BaseLayout } from "@/app/_layouts";
 import Image from "next/image";
 
@@ -5,7 +8,7 @@ import GetStarted from "@/public/assets/images/get-started.png";
 import LinkIcon from "@/public/assets/svg/LinkIcon";
 import { CustomSelect, PhonePreview } from "@/app/components/common";
 
-const NewLink = () => {
+const NewLink = ({ index }: { index: number }) => {
   return (
     <div className="bg-gray-300 rounded-[12px] p-[20px] h-full flex flex-col gap-[12px] justify-center items-center">
       {/* drag */}
@@ -15,7 +18,7 @@ const NewLink = () => {
             <span className="h-[1px] w-[12px] bg-gray-100" />
             <span className="h-[1px] w-[12px] bg-gray-100" />
           </span>
-          <p className="font-bold">Link #1</p>
+          <p className="font-bold">Link #{index + 1}</p>
         </span>
 
         <button
@@ -29,7 +32,10 @@ const NewLink = () => {
 
       {/* links */}
       <div className="flex flex-col gap-[4px] w-full">
-        <label htmlFor="platform" className="text-[12px] leading-[150%]">
+        <label
+          htmlFor={`platform-${index}`}
+          className="text-[12px] leading-[150%]"
+        >
           Platform
         </label>
 
@@ -37,15 +43,15 @@ const NewLink = () => {
       </div>
 
       <div className="flex flex-col gap-[4px] w-full">
-        <label htmlFor="link" className="text-[12px] leading-[150%]">
+        <label htmlFor={`link-${index}`} className="text-[12px] leading-[150%]">
           Link
         </label>
         <span className="relative">
           <LinkIcon className="size-[16px] absolute left-3 inset-y-0 my-auto" />
 
           <input
-            id="link"
-            name="link"
+            id={`link-${index}`}
+            name={`link-${index}`}
             type="url"
             placeholder="e.g. https://www.github.com/johnappleseed"
             required
@@ -80,10 +86,16 @@ const GetYouStarted = () => {
 };
 
 const Links = () => {
+  const [links, setLinks] = useState<number[]>([]);
+
+  const handleAddLink = () => {
+    setLinks((prevLinks) => [...prevLinks, prevLinks.length]);
+  };
+
   return (
     <BaseLayout>
       <section className="flex flex-col lg:flex-row gap-[24px]">
-        <div className="hidden lg:flex justify-center items-center bg-white w-full max-w-[400px] xl:max-w-[560px] lg:min-h-[834px] p-[24px] rounded-[12px]">
+        <div className="hidden lg:flex justify-center items-center bg-white w-full max-w-[400px] xl:max-w-[560px] lg:min-h-[834px] h-max p-[24px] rounded-[12px]">
           <PhonePreview />
         </div>
 
@@ -101,15 +113,19 @@ const Links = () => {
             <button
               type="button"
               className="rounded border border-primary hover:bg-primary-200 py-[11px] px-[27px] text-primary font-semibold text-base active:scale-90 duration-200"
+              onClick={handleAddLink}
             >
               + Add new link
             </button>
 
-            {/* Let's get you started */}
-            {/* <GetYouStarted /> */}
-
-            {/* Add new link */}
-            <NewLink />
+            <div className="max-h-[489px] overflow-scroll flex flex-col gap-[24px]">
+              {/* Conditional rendering based on the length of links */}
+              {links.length === 0 ? (
+                <GetYouStarted />
+              ) : (
+                links.map((_, index) => <NewLink key={index} index={index} />)
+              )}
+            </div>
           </div>
 
           <div className="flex md:justify-end bg-white w-full p-[16px] md:py-[24px] md:px-[40px] lg:min-h-[94px] rounded-b-[12px]">
