@@ -8,7 +8,13 @@ import GetStarted from "@/public/assets/images/get-started.png";
 import LinkIcon from "@/public/assets/svg/LinkIcon";
 import { CustomSelect, PhonePreview } from "@/app/components/common";
 
-const NewLink = ({ index }: { index: number }) => {
+const NewLink = ({
+  index,
+  onRemove,
+}: {
+  index: number;
+  onRemove: (index: number) => void;
+}) => {
   return (
     <div className="bg-gray-300 rounded-[12px] p-[20px] h-full flex flex-col gap-[12px] justify-center items-center">
       {/* drag */}
@@ -25,6 +31,7 @@ const NewLink = ({ index }: { index: number }) => {
           type="button"
           title="Remove"
           className="active:scale-95 duration-200"
+          onClick={() => onRemove(index)}
         >
           Remove
         </button>
@@ -92,6 +99,10 @@ const Links = () => {
     setLinks((prevLinks) => [...prevLinks, prevLinks.length]);
   };
 
+  const handleRemoveLink = (index: number) => {
+    setLinks((prevLinks) => prevLinks.filter((_, i) => i !== index));
+  };
+
   return (
     <BaseLayout>
       <section className="flex flex-col lg:flex-row gap-[24px]">
@@ -123,7 +134,13 @@ const Links = () => {
               {links.length === 0 ? (
                 <GetYouStarted />
               ) : (
-                links.map((_, index) => <NewLink key={index} index={index} />)
+                links.map((_, index) => (
+                  <NewLink
+                    key={index}
+                    index={index}
+                    onRemove={handleRemoveLink}
+                  />
+                ))
               )}
             </div>
           </div>
