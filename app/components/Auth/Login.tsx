@@ -35,6 +35,7 @@ const Login = () => {
   const onSubmit = async (data: FormData) => {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
+      toast.success("Login successful!");
       router.push("/links");
     } catch (error: any) {
       toast.error(error.message);
@@ -44,7 +45,7 @@ const Login = () => {
   return (
     <AuthLayout>
       <Toaster
-        position="bottom-center"
+        position="top-center"
         reverseOrder={false}
         toastOptions={{
           className:

@@ -41,6 +41,7 @@ const CreateAccount = () => {
   const onSubmit = async (data: FormData) => {
     try {
       await createUserWithEmailAndPassword(auth, data.email, data.password);
+      toast.success("Account created successfully!");
       router.push("/");
     } catch (error: any) {
       toast.error(error.message);
@@ -50,7 +51,7 @@ const CreateAccount = () => {
   return (
     <AuthLayout>
       <Toaster
-        position="bottom-center"
+        position="top-center"
         reverseOrder={false}
         toastOptions={{
           className:
