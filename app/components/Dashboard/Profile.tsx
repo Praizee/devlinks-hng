@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <BaseLayout>
       <section className="flex flex-col lg:flex-row gap-[24px]">
-        <div className="hidden lg:flex justify-center items-center bg-white w-full max-w-[560px] lg:min-h-[834px] p-[24px] rounded-[12px]">
+        <div className="hidden lg:flex justify-center items-center bg-white w-full max-w-[400px] xl:max-w-[560px] lg:min-h-[834px] p-[24px] rounded-[12px]">
           <div className="relative flex justify-center items-center">
             <Image src={Preview} alt="Phone Preview" className="select-none" />
 
